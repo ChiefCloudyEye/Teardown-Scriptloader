@@ -13,3 +13,7 @@ end
 function examplemodDraw()	--This function is called every UI tick while the UI is being rendered.
 	
 end
+
+function examplemodUI()	--This function is called inside the mod's page of the options menu.
+	
+end

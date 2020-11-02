@@ -1,6 +1,8 @@
 #include "mods/examplemod.lua"	--use #include to add the files for new mods.
+#include "mods/basicmod.lua"
 mods = {
 	"examplemod",	--add the function prefix from your mod here to allow it to be enabled.
+	"basicmod",
 }
 
 
@@ -33,6 +35,8 @@ function debugMods()
 		loadstring(enabledmods[i].."Tick()")()
 		SetString("hud.notification", getName(i).." failed to compile. (\""..mods[i].."Draw()\")")
 		loadstring(enabledmods[i].."Draw()")()
+		SetString("hud.notification", getName(i).." failed to compile. (\""..mods[i].."UI()\")")
+		loadstring(enabledmods[i].."UI()")()
 	end
 	SetString("hud.notification", "Mods successfully compiled.")
 end
@@ -42,14 +46,17 @@ end
 function getDesc(index)
 	return loadstring("return "..mods[index].."Desc")()
 end
+function getUI(index)
+	loadstring(mods[index].."UI()")()
+end
 function toggle(index)
 	if getEnabled(index) then
 		--table.remove(enabledmods,index)
 		enabledmods[index] = nil
 	else
 		enabledmods[index] = mods[index]
-		debugMods()
 	end
+	debugMods()
 end
 function getEnabled(index)
 	return mods[index] == enabledmods[index]

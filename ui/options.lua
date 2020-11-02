@@ -154,7 +154,7 @@ function drawOptions(scale, allowDisplayChanges)
 				UiPush()
 					local buttonnumber = 1
 					local buttonwidth = (600-40)/buttonnumber
-					UiTranslate(20+buttonwidth/2, 700-80)
+					UiTranslate(20+buttonwidth/2, 700-90)
 					local text = "f"
 					if getEnabled(modsTab) then
 						text = "Disable"
@@ -163,8 +163,16 @@ function drawOptions(scale, allowDisplayChanges)
 						text = "Enable"
 						UiColor(0.0,1.0,0.0)
 					end
-					if UiTextButton(text, 560, 40) then toggle(modsTab) end
+					if UiTextButton(text, 560, 40) then
+						UiColor(1,1,1)
+						toggle(modsTab)
+					end
 					UiColor(1,1,1)
+					if getEnabled(modsTab) then
+						if text ~= "Enable" then
+							getUI(modsTab)
+						end
+					end
 				UiPop()
 
 				UiPush()

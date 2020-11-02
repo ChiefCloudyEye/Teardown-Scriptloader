@@ -1,6 +1,6 @@
-#include "mods/examplemod.lua"
+#include "mods/examplemod.lua"	--use #include to add the files for new mods.
 mods = {
-	"examplemod",
+	"examplemod",	--add the function prefix from your mod here to allow it to be enabled.
 }
 
 

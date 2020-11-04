@@ -37,7 +37,6 @@ function basicmodDraw()	--This function is called every UI tick while the UI is 
 end
 
 function basicmodUI()	--This function is called inside the mod's page of the options menu.
-	UiTranslate(20+buttonwidth/2, 700-90)
 	UiTranslate(0,-80)
 	local text = ""
 	if allweap then

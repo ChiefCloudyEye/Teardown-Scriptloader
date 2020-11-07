@@ -1,8 +1,10 @@
 #include "mods/examplemod.lua"	--use #include to add the files for new mods.
 #include "mods/basicmod.lua"
+#include "mods/minigun.lua"
 mods = {
 	"examplemod",	--add the function prefix from your mod here to allow it to be enabled.
 	"basicmod",
+	"minigunmod",
 }
 
 
